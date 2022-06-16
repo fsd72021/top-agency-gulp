@@ -1,0 +1,68 @@
+div(class="modal register-modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true")
+	div(class="modal-dialog")
+		div(class="modal-content")
+			div(class="modal-header")
+				h5(class="modal-title" id="registerModalLabel") #{trans.register}
+				button(type="button" class="btn-close btn-close-dark" data-bs-dismiss="modal" aria-label="Close")
+			div(class="modal-body")
+				form(class="needs-validation" action="")
+					div(class="row")
+						+modal_input("user", "text", trans.name)
+						+modal_input("envelope", "email", trans.email)
+						+modal_input("key", "password", trans.password)
+						+modal_input("key", "password", trans.confirm_password)
+						div(class="col-lg-12")
+							div(class="form-group text-center")
+								button(class="btn" type="submit") #{trans.register_now}
+							div(class="col-lg-12 text-center toggle-link")
+								p #{trans.have_an_account}
+									button(class="btn" type="button" data-bs-toggle="modal" data-bs-target="#loginModal") #{trans.login_now}
+//register modal
+
+//login modal
+div(class="modal login-modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true")
+	div(class="modal-dialog")
+		div(class="modal-content")
+			div(class="modal-header")
+				h5(class="modal-title" id="loginModalLabel") #{trans.login}
+				button(type="button" class="btn-close btn-close-dark" data-bs-dismiss="modal" aria-label="Close")
+			div(class="modal-body")
+				form(class="needs-validation" action="")
+					div(class="row")
+						+modal_input("envelope", "email", trans.email)
+						+modal_input("key", "password", trans.password)
+						div(class="col-lg-12 mb-2")
+							div(class="form-check")
+								label(class="form-check-label" for="loginRem")
+									input(class="form-check-input" type="checkbox" id="loginRem")
+									| #{trans.remember_me}
+								button(class="forget-btn" type="button" data-bs-toggle="modal" data-bs-target="#forgetPasswordModal") #{trans.forget_password}
+						div(class="col-lg-12")
+							div(class="form-group text-center")
+								button(class="btn" type="submit") #{trans.login_now}
+						div(class="col-lg-12 text-center toggle-link")
+							p #{trans.dont_have_an_account}
+								button(class="btn" type="button" data-bs-toggle="modal" data-bs-target="#registerModal") #{trans.create_account}
+//login modal
+
+//forget password modal
+div(class="modal forget-password-modal fade" id="forgetPasswordModal" tabindex="-1" aria-labelledby="forgetPasswordModalLabel" aria-hidden="true")
+	div(class="modal-dialog")
+		div(class="modal-content")
+			div(class="modal-header")
+				h5(class="modal-title" id="forgetPasswordModalLabel") #{trans.forget_password}
+				button(type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close")
+			div(class="modal-body")
+				form(class="needs-validation" action="")
+					div(class="row")
+						div(class="col-lg-12")
+							div(class="form-group input-group flex-nowrap")
+								+modal_input("envelope", "email", trans.email)
+									div(class="invalid-tooltip") #{trans.email_error}
+						div(class="col-lg-12 text-center")
+							div(class="form-group")
+								button(class="btn" type="submit") #{trans.send_now}
+						div(class="col-lg-12 text-center toggle-link")
+							p #{trans.dont_have_an_account}
+								button(class="btn" type="button" data-bs-toggle="modal" data-bs-target="#registerModal") #{trans.create_account}
+//forget password modal

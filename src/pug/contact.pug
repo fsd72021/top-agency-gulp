@@ -1,0 +1,58 @@
+extend index
+
+block website_title
+	title #{trans.website_title} | #{trans.contact_us}
+
+block home_block
+	//breadcrumb
+	+breadcrumb(trans.contact_us)
+	//breadcrumb
+
+	//contact info
+	section(class="contact-info-area")
+		div(class="container")
+			div(class="content")
+				div(class="contact-info")
+					h2(class="info-title") #{trans.contact_info}
+					div(class="info")
+						p #{data.address}
+					div(class="info") #{trans.phone}:
+						a(href=`tel:${data.phone_number}`) #{data.phone_number} 
+					div(class="info") #{trans.email}:
+						a(href=`mailto:${data.email}`) #{data.email}
+				div(class="info-btn")
+					a(href=`tel:${data.phone_number}` class="btn") #{trans.contact_us}
+	//contact info
+
+	//contact form
+	section(class="contact-form-area" style=`background-image: url(${img_path}/slider/banner-1.jpg)`)
+		div(class="container")
+			div(class="content")
+				div(class="contact-form")
+					div(class="main-title")
+						h2 #{trans.contact_us}
+						p #{trans.please_fill}
+					//toast success
+					+alert(message_sent_successfully, "success")
+					//toast error
+					+alert(message_error, "danger")
+					
+					form(method="" action="")
+						div(class="row")
+							+contact_input(trans.name, "text", "col-lg-6")
+							+contact_input(trans.email, "text", "col-lg-6")
+							+contact_input(trans.phone, "text", "col-lg-12")
+							div(class="col-lg-12")
+								div(class="form-group")
+									textarea(class="form-control is-invalid" rows="4" placeholder=trans.message)
+									div(class="invalid-feedback") #{trans.please_fill}
+						div(class="contact-btn")
+							button(class="btn" type="submit") #{trans.send_message}
+				div(class="form-image")
+					img(data-src=`${img_path}/slider/banner.jpg` class="img-fluid" alt="image")
+	//contact form
+
+	//map
+	div(class="map")
+		iframe(src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7545436.437489974!2d49.82654215605671!3d22.56806235540508!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2fa187a2d605d7%3A0x222e2f02d74fde90!2z2KfZhNmF2K_ZitmG2Kkg2KfZhNi12YbYp9i52YrYqSDYp9mE2KzYr9mK2K_YqdiMINin2YTYsdmK2KfYtiAxNDMzNNiMINin2YTYs9i52YjYr9mK2Kk!5e0!3m2!1sar!2sus!4v1654181525255!5m2!1sar!2sus" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade")
+	//map

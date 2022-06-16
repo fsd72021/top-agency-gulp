@@ -1,0 +1,62 @@
+//to top
+div(id="toTop")
+	button 
+		i(class="fa-solid fa-arrow-turn-up")
+//to top
+
+//footer part
+footer
+	div(class="container")
+		div(class="footer-content")
+			div(class="row")
+				div(class="col-lg-4 col-md-6")
+					div(class="footer-box")
+						h4 #{trans.about_us}
+						div(class="text")
+							p #{trans.lorem_text}
+				div(class="col-lg-2 col-md-6")
+					div(class="footer-box")
+						h4 #{trans.links}
+						ul(class="map-links")
+							+footer_item("home", trans.home)
+							+footer_item("about", trans.about_us)
+							+footer_item("tours", trans.tours)
+							+footer_item("contact", trans.contact_us)
+				div(class="col-lg-3 col-md-6")
+					div(class="footer-box")
+						h4 #{trans.tours}
+						ul(class="map-links")
+							li
+								a(href="single-tour.html") #{trans.lorem_text}
+							li
+								a(href="single-tour.html") #{trans.lorem_text}
+							li
+								a(href="single-tour.html") #{trans.lorem_text}
+				div(class="col-lg-3 col-md-6")
+					div(class="footer-box")
+						h4 #{trans.contact_info}
+						div(class="contact")
+							p 
+								i(class="fa-solid fa-location-dot")
+								a(href="contact.html") #{data.address}
+							p 
+								i(class="fa-solid fa-phone")
+								a(href=`tel:${data.phone_number}`) #{trans.phone}: #{data.phone_number} 
+							p 
+								i(class="fa-solid fa-envelope-open-text")
+								a(href=`mailto:${data.email}`) #{trans.email}: #{data.email}
+	div(class="copyright")
+		div(class="container")
+			div(class="copy-text")
+				p #{trans.copyrights}
+					a(href="https://marwan.tech/" target="_blank" rel="noreferrer") #{marwan_tech}
+			div(class="social-links")
+				div(class="links")
+					//- +social_media_footer(name, icon_class)
+					a(href="#" target="_blank" rel="noreferrer" aria-label="facebook")
+						i(class="fa-brands fa-facebook-f")
+					a(href="#" target="_blank" rel="noreferrer" aria-label="twitter")
+						i(class="fa-brands fa-twitter")
+					a(href="#" target="_blank" rel="noreferrer" aria-label="instagram")
+						i(class="fa-brands fa-instagram")
+//footer part

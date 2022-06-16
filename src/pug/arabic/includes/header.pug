@@ -1,0 +1,72 @@
+header
+	div(class="topbar")
+		div(class="container")
+			div(class="content")
+				div(class="settings")
+					each item in [trans.country, trans.usd]
+						div(class="dropdown")
+							a(class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false")
+								| #{item}
+							ul(class="dropdown-menu")
+								- for (let x = 1; x <= 3; x++)
+									li
+										a(class="dropdown-item" href="#") #{trans.action} #{x}
+					div(class="dropdown")
+						a(class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false")
+							| #{trans.lang}
+						ul(class="dropdown-menu")
+							li
+								a(class="dropdown-item" href="../index.html") الإنجليزية
+							li
+								a(class="dropdown-item" href="#!") العربية
+				div(class="account")
+					button(type="button", data-bs-toggle="modal", data-bs-target="#loginModal") #{trans.login}
+					button(type="button", data-bs-toggle="modal", data-bs-target="#registerModal") #{trans.register}
+	nav(class="navbar main-nav navbar-expand-lg")
+		div(class="container")
+			div(class="content")
+				div(class="group")
+					a(class="navbar-brand" href="index.html") 
+						img(data-src=`${img_path}/logo.png` class="img-fluid" alt="image")
+				div(class="collapse navbar-collapse" id="navbarNav")
+					ul(class="navbar-nav")
+						+header_item("index", "active", trans.home)
+						+header_item("about", "", trans.about_us)
+						+header_item("tours", "", trans.tours)
+						+header_item("contact", "", trans.contact_us)
+				button(class="navbar-toggler" aria-label="menue icon")
+					div(class="hamburger-menu")
+						span
+						span
+						span
+				div(class="quote-button")
+					a(href="contact.html") #{trans.contact_us}
+	aside(class="side-widget")
+		div(class="inner")
+			div(class="logo")
+				a(href="index.html")
+					img(data-src=`${img_path}/logo.png` alt="image")
+				hr
+				div(class="side-menu")
+					ul
+						+header_item("index", "active", trans.home)
+						+header_item("about", "", trans.about_us)
+						+header_item("tours", "", trans.tours)
+						+header_item("contact", "", trans.contact_us)
+				hr
+				div(class="hide-mobile")
+					div(class="widget-title") #{trans.contact_info}
+					div(class="address")
+						p 
+							a(href=`tel:${data.phone_number}`) 
+								span #{trans.phone}: 
+									| #{data.phone_number}
+							a(href=`mailto:${data.email}`) 
+								span #{trans.email}: 
+								| #{data.email}
+			div(class="account")
+				button(type="button", data-bs-toggle="modal", data-bs-target="#loginModal") #{trans.login}
+				button(type="button", data-bs-toggle="modal", data-bs-target="#registerModal") #{trans.register}
+//register modal
+div(class="modals")
+	include ../components/registration.pug

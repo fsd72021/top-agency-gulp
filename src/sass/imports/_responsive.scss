@@ -1,0 +1,416 @@
+@media screen and (max-width: 1399px) {}
+
+@media screen and (max-width: 1199px) {
+
+	.about-us,
+	section.about-in-page {
+		.about-content {
+			.about-text {
+				padding-inline-end: 0;
+				padding-top: 0;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 991px) {
+	header {
+		padding: 0 1rem;
+
+		.navbar {
+			padding: 10px 0;
+
+			.inner {
+				.site-menu {
+					display: none;
+				}
+			}
+
+			.navbar-toggler {
+				margin-inline-end: 0
+			}
+		}
+
+		.quote-button {
+			display: none;
+		}
+	}
+
+	.about-us,
+	section.about-in-page {
+		.content {
+			.about-text {
+				padding-inline-end: 0;
+			}
+		}
+	}
+
+	section.cta .content .cta-sale .sale-content .sale-box,
+	section.cta .content .cta-sale .sale-content .sale-details {
+		display: table-row;
+		vertical-align: top;
+		color: #fff;
+	}
+
+	section.cta {
+		.content {
+			.cta-sale {
+				.sale-content {
+					display: block;
+
+					.sale-box {
+						display: block;
+						margin-bottom: 20px;
+					}
+				}
+			}
+		}
+	}
+
+	section.tours-in-page {
+		.content {
+			.tours-filter {
+				padding: 30px 15px;
+
+				.datepicker {
+					display: block;
+
+					.form-group {
+						&:first-of-type {
+							margin-inline-end: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	section.single-tour {
+		.content {
+			.single-tour-box {
+				.single-tour-details {
+					display: block;
+
+					.text {
+						margin-inline-end: 0;
+					}
+
+					.image {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+
+	.contact-form-area {
+		.contact-form {
+			grid-column: 1/8;
+		}
+
+		.form-image {
+			grid-column: 3/11;
+		}
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.side-widget {
+		width: 80vw;
+	}
+
+	.main-slider {
+		.item {
+			text-align: center;
+
+			.slider-descripton {
+				.slider-title {
+					font-size: 40px;
+				}
+
+				.slider-text {
+					font-size: 18px;
+				}
+			}
+		}
+
+		.owl-theme {
+			.owl-nav {
+				right: 0;
+				left: 0;
+				width: 100%;
+			}
+		}
+	}
+
+	.about-us {
+		.about-content {
+			.about-text {
+				h2 {
+					font-size: 26px;
+				}
+			}
+		}
+	}
+
+	section.cta {
+		.content {
+			display: block;
+
+			.cta-text {
+				padding: 50px 25px;
+
+				p {
+					font-size: 40px !important;
+				}
+			}
+
+			.cta-sale {
+				.sale-content {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	section.video {
+		padding: $padding_section;
+
+		.content {
+			.video-details {
+				padding: 0;
+				text-align: center;
+				margin-bottom: 30px;
+			}
+
+			.video-iframe {
+				bottom: 0;
+			}
+		}
+	}
+
+	section.testimonials {
+		.content {
+			.testimonials-text {
+				padding-top: 0;
+				margin-bottom: 30px;
+				text-align: center
+			}
+
+			.testimonials-carousel {
+				padding: 0;
+			}
+		}
+	}
+
+	section.partners {
+		.content {
+			.item {
+				width: calc(100% / 2);
+				padding: 20px;
+
+				&:nth-child(even) {
+					border-inline-end-width: 0;
+				}
+			}
+		}
+	}
+
+	section.tours-in-page {
+		.content {
+			.tours-sort {
+				.tours-result {
+					margin-bottom: 25px;
+					height: auto;
+				}
+			}
+		}
+	}
+
+	.contact-form-area {
+		.contact-form {
+			grid-column: 1/11;
+			grid-row: 1/11;
+		}
+
+		.form-image {
+			grid-column: 1/11;
+			grid-row: 11/15;
+		}
+	}
+
+	.main-title {
+		.sub-title {
+			font-size: 20px
+		}
+
+		h2 {
+			font-size: 26px;
+		}
+	}
+}
+
+@media screen and (max-width: 575px) {
+	.topbar {
+		.content {
+			.account {
+				display: none;
+			}
+		}
+	}
+
+	.side-widget {
+		.account {
+			display: block;
+		}
+	}
+
+	header {
+		.navbar {
+			.lang {
+				padding-inline-start: 5px;
+			}
+
+			.navbar-brand {
+				margin-inline-end: 20px;
+			}
+		}
+	}
+
+	.about-us,
+	section.about-in-page {
+		.content {
+			.about-text {
+				ul {
+					grid-template-columns: repeat(1, 1fr);
+				}
+			}
+		}
+	}
+
+	section.contact {
+		.content {
+			.contact-form {
+				padding: 20px;
+			}
+		}
+	}
+
+	section.hotels {
+		.content {
+			.hotels-box {
+				grid-template-columns: repeat(6, 1fr);
+
+				.hotels-image {
+					grid-column: 1/7;
+				}
+
+				.hotels-details {
+					grid-column: 1/6;
+
+				}
+			}
+		}
+	}
+
+	section.tours-in-page {
+		.content {
+			.tours-sort {
+				.tours-result {
+					padding: 20px;
+				}
+
+				.tours-dropdowns {
+					display: block;
+					padding: 20px;
+
+					span {
+						margin-inline-end: 0;
+						margin-bottom: 10px;
+					}
+
+					.dropdowns {
+						display: block;
+
+						select {
+							margin-bottom: 15px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	section.tours {
+		.content {
+			.tours-box {
+				.tours-btns {
+					.btn {
+						font-size: 15px;
+						padding: 7px 15px;
+					}
+				}
+			}
+		}
+	}
+
+	.contact-form-area {
+		.contact-form {
+			padding: 20px;
+		}
+	}
+
+	.breadcrumb-area {
+		.breadcrumb-item {
+			font-size: 22px;
+		}
+	}
+
+	section.single-tour {
+		.content {
+			.single-tour-booking {
+				padding: 25px;
+			}
+		}
+	}
+
+	section.error {
+		.content {
+			h3 {
+				font-size: 26px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.contact-info-area {
+		.content {
+			height: auto;
+			border-radius: 0;
+		}
+	}
+}
+
+@media screen and (max-width: 400px) {
+	section.single-tour {
+		.content {
+			.single-tour-box {
+				.single-tour-details {
+					margin-inline-start: 0;
+					margin-top: 0;
+
+					.text {
+						&::before {
+							display: none;
+						}
+					}
+
+					.image {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}

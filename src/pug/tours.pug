@@ -1,0 +1,54 @@
+extend index
+
+block website_title
+	title #{trans.website_title} | #{trans.tours}
+
+block home_block
+	//breadcrumb
+	+breadcrumb(trans.tours)
+	//breadcrumb
+
+	//tours 
+	section(class="tours tours-in-page" style=`background-image: url(${img_path}/bgs/tours-bg.jpg)`)
+		div(class="container")
+			div(class="content")
+				div(class="tours-sort")
+					div(class="row")
+						+tours_result_box
+				div(class="row")
+					+tours_filtration_box
+					div(class="col-lg-8 col-md-6 box")
+						div(class="row")
+							- for (let box = 0; box < 3; box++)
+								div(class="col-lg-6 col-md-6 box" data-aos="fade-up" data-delay=box*50)
+									div(class="tours-box")
+										div(class="tours-image")
+											a(href="single-tour.html" class="image") 
+												img(data-src=`${img_path}/tours/tour-${box + 1}.jpg` alt="image")
+											div(class="tours-badge") 
+												span #{trans.sale_here} 
+												span 25%
+											div(class="tours-title") 
+												a(href="single-tour.html") 
+													h3 #{single_tour_box.title}
+										div(class="tours-data")
+											ul 
+												- var list = ["78", "65", "251"]
+												each item in list
+													li 
+														a(href="!#") 
+															i(class="fa-solid fa-eye")
+															span= item
+										div(class="tours-details")
+											div(class="tours-price")
+												div
+													span(class="price")
+														sup $
+														| #{(box + 1) * 150}
+													span(class="duration") #{single_tour_box.duration}
+												div(class="description") 
+													p #{single_tour_box.description}
+											div(class="tours-btns")
+												a(href="single-tour.html" class="btn") #{trans.book_now}
+												a(href="single-tour.html" class="btn") #{trans.add_to_list}
+	//tours

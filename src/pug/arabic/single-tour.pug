@@ -1,0 +1,49 @@
+extend index
+
+block website_title
+	title #{trans.website_title} | #{trans.single_tour}
+
+block home_block
+	//breadcrumb
+	+breadcrumb(trans.single_tour)
+	//breadcrumb
+
+	//single tour
+	section(class="single-tour")
+		div(class="container")
+			div(class="content")
+				h2(class="title") #{trans.tour_overview}
+				div(class="single-tour-overview")
+					- for (let box = 0; box <= 3; box++)
+						div(class="single-tour-box")
+							div(class="day"): span #{trans.day} #{box + 1}
+							div(class="single-tour-details")
+								div(class="text")
+									h3
+										i(class="fa-solid fa-location-dot")
+										| #{single_tour_box.title}
+									p #{trans.lorem_text} #{trans.lorem_text}
+								div(class="image")
+									img(data-src=`${img_path}/single-tour/0${box + 1}.png` alt="image")
+				div(class="single-tour-btn")
+					button(class="btn" type="button") #{trans.book_now}
+				div(class="single-tour-booking")
+					h4(class="title") #{trans.book_now}
+					div(class="single-tour-form")
+						form(class="needs-validation" novalidate)
+							div(class="row")
+								+booking_input("form-group datepicker input-daterange", trans.check_in, trans.check_in, "text", "col-lg-3 col-md-6")
+								+booking_input("form-group datepicker input-daterange", trans.check_out, trans.check_out, "text", "col-lg-3 col-md-6")
+								+booking_input("form-group", trans.adult, trans.adult, "text", "col-lg-3 col-md-6")
+								+booking_input("form-group", trans.child, trans.child, "text", "col-lg-3 col-md-6")
+								+booking_input("form-group", trans.first_name, trans.first_name, "text", "col-lg-3 col-md-6")
+								+booking_input("form-group", trans.last_name, trans.last_name, "text", "col-lg-3 col-md-6")
+								+booking_input("form-group", trans.email, trans.email, "email", "col-lg-3 col-md-6")
+								+booking_input("form-group", trans.phone, trans.phone, "text", "col-lg-3 col-md-6")
+								+booking_input("form-group", trans.address, trans.address, "text", "col-lg-12")
+								div(class="col-lg-12")
+									div(class="form-group")
+										label #{trans.message}
+										textarea(class="form-control" rows="5" placeholder=trans.message)
+							div(class="form-btn")
+								button(class="btn" type="submit") #{trans.send_message}

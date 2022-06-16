@@ -1,0 +1,19 @@
+section(class="cta" style=`background-image: url(${img_path}/bgs/cta-bg.jpg)`)
+	div(class="content")
+		div(class="cta-text")
+			each item in cta_list
+				p #{item}
+		div(class="cta-sale")
+			div(class="sale-content")
+				div(class="sale-box")
+					div(class="sale-box-top")
+						p(class="number") 50
+						span(class="sup-1") %
+						span(class="sup-2") #{trans.off}
+					p(class="text-sale") #{trans.sale}
+				div(class="sale-details")
+					h3 #{cta.title}
+					p #{cta.description}
+					div(class="sale-btns")
+						a(href="tours.html" class="btn") #{trans.book_now}
+						a(href="about.html" class="btn") #{trans.read_more}

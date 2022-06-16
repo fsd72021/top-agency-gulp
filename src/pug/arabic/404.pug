@@ -1,0 +1,21 @@
+extend index
+
+block website_title
+	title #{trans.website_title} | #{trans.error_page}
+
+block home_block
+	//breadcrumb
+	+breadcrumb(trans.error_page)
+	//breadcrumb
+
+	//error 404
+	section(class="error")
+		div(class="content")
+			div(class="container")
+				div(class="text-center mx-auto") 
+					h2 404
+					h3 #{trans.error_404}
+					p(class="lead") #{trans.lorem_text}
+					a(href="index.html" class="btn back") #{trans.home}
+	//error 404
+

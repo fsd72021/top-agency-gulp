@@ -1,0 +1,126 @@
+//- breadcrumb
+mixin breadcrumb(page_name)
+	div(class="breadcrumb-area" style=`background-image: url(${img_path}/bgs/breadcrumb_bg.jpg)`)
+		div(class="container")
+			nav(aria-label="breadcrumb")
+				ol(class="breadcrumb")
+					li(class="breadcrumb-item")
+						a(href="index.html") #{trans.home}
+					li(class="breadcrumb-item active" aria-current="page") #{page_name}
+
+//- header item navlink
+mixin header_item(link, class_name, name)
+	li(class=`nav-item ${class_name}`)
+		a(class="nav-link" aria-current="page" href=`${link}.html`) #{name}
+
+//- footer item maplinks
+mixin footer_item(link, name)
+	li
+		a(href=`${link}.html`) #{name}
+
+//- alert
+mixin alert(alert_message, class_name)
+	div(class="toast-part")
+		div(class=`toast align-items-center text-white border-0 bg-${class_name} show`, role="alert" aria-live="assertive" aria-atomic="true")
+			div(class="toast-content d-flex")
+				div(class="toast-body") #{alert_message}
+				button(class="btn-close btn-close-white" type="button" data-bs-dismiss="toast" aria-label="Close")
+
+//- tours sort
+mixin dropdowns_sort(index)
+	select(class="form-select" aria-label="sort select example")
+		option(selected disabled) #{trans.please_select_element}
+		option(value=index) #{trans.option_text}
+		option(value=index) #{trans.option_text}
+
+//- tours stars
+mixin stars_filter(element, number)
+	#{element}
+		div(class="check-part")
+			input(type="checkbox" class="form-check-input" value=number id=number)
+			label(class="icons" for=number)
+				- for (let x = 1; x <= number; x++)
+					i(class="fa-solid fa-star" aria-label="rating star")
+		div(class="number-part")
+			span #{number * 5}
+
+//- tours type
+mixin type_filter(element, text, index)
+	#{element}
+		div(class="check-part")
+			input(type="checkbox" class="form-check-input" value=text id=text)
+			label(for=text) #{text}
+		div(class="number-part")
+			span #{index + 1}
+
+//- booking form
+mixin booking_input(div_calss_name, label_name, input_placeholder, input_type, col)
+	div(class=col)
+		div(class=div_calss_name)
+			label #{label_name}
+			input(type=input_type class="form-control" placeholder=input_placeholder)
+
+//- modals
+mixin modal_input(icon_class, input_type, input_placeholder)
+	div(class="col-lg-12")
+		div(class="form-group input-group flex-nowrap")
+			i(class=`fa-solid fa-${icon_class}`)
+			input(type=input_type class="form-control" placeholder=input_placeholder)
+
+//- booking form
+mixin contact_input(input_placeholder, input_type, col)
+	div(class=col)
+		div(class="form-group")
+			input(type=input_type class="form-control" placeholder=input_placeholder)
+
+//- tours result box
+mixin tours_result_box
+	div(class="col-lg-4 col-md-6")
+		div(class="tours-result") 
+			p #{trans.results_found}: 
+				strong 132
+	div(class="col-lg-8 col-md-6")
+		div(class="tours-dropdowns") 
+			span #{trans.sort_by}: 
+			div(class="dropdowns")
+				- for (x = 1; x <= 3; x++)
+					+dropdowns_sort(x)
+
+//- tours filtration box
+mixin tours_filtration_box
+	div(class="col-lg-4 col-md-6 box")
+		form(action="" method="method")
+			div(class="tours-filter")
+				h2(class="title") #{trans.find_your_tours}
+				div(class="form-group")
+					label #{trans.Where_do_you_want_to_go}
+					input(name="" type="text" class="form-control" placeholder="Write the place")
+				div(class="datepicker input-daterange")
+					div(class="form-group")
+						label #{trans.check_in}
+						input(name="start" type="date" class="form-control")
+					div(class="form-group")
+						label #{trans.check_out}
+						input(name="end" type="date" class="form-control")
+				div(class="filter-btn")
+					button(class="btn" type="submit") #{trans.search_now}
+			div(class="tours-price-filter")
+				h2(class="title") #{trans.price}
+				div(class="range-slider")
+					span(class="range-values")
+					input(value="1000" min="1000" max="100000" step="100" type="range")
+					input(value="100000" min="1000" max="100000" step="100" type="range")
+			div(class="tours-rating")
+				h2(class="title") #{trans.rating}
+				div(class="tours-stars")
+					ul 
+						+stars_filter("li", 5) 
+						+stars_filter("li", 4) 
+						+stars_filter("li", 3) 
+						+stars_filter("li", 2) 
+						+stars_filter("li", 1) 
+			div(class="tours-type")
+				h2(class="title") #{trans.tour_type}
+				ul 
+					each item, index in tours_types
+						+type_filter("li", item, index) 

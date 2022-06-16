@@ -1,0 +1,139 @@
+html[dir=rtl] {
+	%btn_selector {
+		&::before {
+			right: 2px;
+			left: auto;
+			transform: rotate(180deg);
+		}
+
+		&:hover {
+			&::before {
+				right: calc(100% - (40px + 2px));
+			}
+		}
+	}
+
+	body {
+		font-family: 'Cairo', sans-serif;
+	}
+
+	.side-widget {
+		right: -100%;
+		left: auto;
+
+		&.active {
+			right: 0;
+			left: auto;
+		}
+	}
+
+	.breadcrumb-area {
+		.breadcrumb-item+.breadcrumb-item::before {
+			float: right;
+			padding-left: 5px
+		}
+	}
+
+	.main-slider {
+		.item {
+			direction: rtl;
+		}
+
+		.owl-theme {
+			.owl-nav {
+				left: 60px;
+				right: auto;
+			}
+		}
+	}
+
+	section.cta {
+		.content {
+			.cta-sale {
+				.sale-content {
+					.sale-box {
+						.sale-box-top {
+							.sup-1 {
+								right: 100%;
+								left: auto;
+							}
+
+							.sup-2 {
+								right: 100%;
+								left: auto;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.fa-chevron-right,
+	.fa-arrow-right-long {
+		transform: rotateY(180deg);
+	}
+
+	.form-control.is-invalid,
+	.was-validated .form-control {
+
+		&:invalid,
+		&:valid {
+			background-position: left calc(0.375em + 0.1875rem) center;
+		}
+	}
+
+	.dropdown-toggle::after {
+		margin-inline-start: 0.255em;
+	}
+
+	section.single-tour {
+		.content {
+			.single-tour-overview {
+				&::before {
+					left: auto;
+					right: 35px;
+				}
+			}
+
+			.single-tour-box {
+				.single-tour-details {
+					.text {
+						&::before {
+							left: auto;
+							right: -40px;
+						}
+						&::after {
+							right: -46px;
+							left: auto;
+					  }
+					}
+				}
+			}
+		}
+	}
+
+	footer {
+		.footer-content {
+			.footer-box {
+				.map-links {
+					li {
+						&::before {
+							right: 0;
+							left: auto;
+							@include transform(rotate(180deg) translateY(50%));
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 1399px) {}
+
+	@media screen and (max-width: 767px) {}
+
+	@media screen and (max-width: 991px) {}
+
+	@media screen and (max-width: 575px) {}
+}

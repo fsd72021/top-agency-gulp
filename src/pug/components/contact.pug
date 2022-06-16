@@ -1,0 +1,24 @@
+section(class="contact" style=`background-image: url(${img_path}/bgs/contact-bg.jpg)`)
+	div(class="container")
+		div(class="content")
+			div(class="row justify-content-center")
+				div(class="col-lg-7 col-md-12")
+					div(class="contact-form")
+						div(class="main-title")
+							h2 #{contact.main_title}
+							p #{contact.description}
+						//toast success
+						+alert(message_sent_successfully, "success")
+						//toast error
+						+alert(message_error, "danger")
+						form(method="" action="")
+							div(class="row")
+								+contact_input(trans.name, "text", "col-lg-6")
+								+contact_input(trans.email, "text", "col-lg-6")
+								+contact_input(trans.phone, "text", "col-lg-12")
+								div(class="col-lg-12")
+									div(class="form-group")
+										textarea(class="form-control is-invalid" rows="5" placeholder=trans.message)
+										div(class="invalid-feedback") #{trans.please_fill}
+							div(class="contact-btn")
+								button(class="btn" type="submit") #{trans.send_message}
