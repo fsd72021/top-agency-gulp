@@ -8,22 +8,6 @@ block home_block
 	+breadcrumb(trans.contact_us)
 	//breadcrumb
 
-	//contact info
-	section(class="contact-info-area")
-		div(class="container")
-			div(class="content")
-				div(class="contact-info")
-					h2(class="info-title") #{trans.contact_info}
-					div(class="info")
-						p #{data.address}
-					div(class="info") #{trans.phone}:
-						a(href=`tel:${data.phone_number}`) #{data.phone_number} 
-					div(class="info") #{trans.email}:
-						a(href=`mailto:${data.email}`) #{data.email}
-				div(class="info-btn")
-					a(href=`tel:${data.phone_number}` class="btn") #{trans.contact_us}
-	//contact info
-
 	//contact form
 	section(class="contact-form-area" style=`background-image: url(${img_path}/slider/banner-1.jpg)`)
 		div(class="container")
@@ -51,6 +35,22 @@ block home_block
 				div(class="form-image")
 					img(data-src=`${img_path}/slider/banner.jpg` class="img-fluid" alt="image")
 	//contact form
+
+	//contact info
+	section(class="contact-info-area")
+		div(class="container")
+			div(class="content")
+				div(class="contact-info")
+					h2(class="info-title") #{trans.contact_info}
+					div(class="info")
+						p #{data.address}
+					div(class="info") #{trans.phone}:
+						a(href=`tel:${data.phone_number}`) #{data.phone_number} 
+					div(class="info") #{trans.email}:
+						a(href=`mailto:${data.email}`) #{data.email}
+				div(class="info-btn")
+					a(href=`tel:${data.phone_number}` class="btn") #{trans.contact_us}
+	//contact info
 
 	//map
 	div(class="map")

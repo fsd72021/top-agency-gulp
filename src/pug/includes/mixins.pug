@@ -75,11 +75,11 @@ mixin contact_input(input_placeholder, input_type, col)
 
 //- tours result box
 mixin tours_result_box
-	div(class="col-lg-4 col-md-6")
+	div(class="col-lg-4 col-md-12")
 		div(class="tours-result") 
 			p #{trans.results_found}: 
 				strong 132
-	div(class="col-lg-8 col-md-6")
+	div(class="col-lg-8 col-md-12")
 		div(class="tours-dropdowns") 
 			span #{trans.sort_by}: 
 			div(class="dropdowns")
@@ -88,7 +88,7 @@ mixin tours_result_box
 
 //- tours filtration box
 mixin tours_filtration_box
-	div(class="col-lg-4 col-md-6 box")
+	div(class="col-lg-4 col-md-12 box")
 		form(action="" method="method")
 			div(class="tours-filter")
 				h2(class="title") #{trans.find_your_tours}

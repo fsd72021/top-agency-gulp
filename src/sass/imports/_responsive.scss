@@ -11,12 +11,45 @@
 			}
 		}
 	}
+
+	section.tours {
+		.content {
+			.tours-box {
+				.tours-details {
+					padding: 20px 15px;
+				}
+
+				.tours-btns {
+					.btn {
+						font-size: 14px;
+						padding: 7px 15px;
+					}
+				}
+			}
+		}
+	}
+
+	section.tours-in-page {
+		.content {
+			.tours-filter {
+				padding: 30px 15px;
+
+				.datepicker {
+					display: block;
+
+					.form-group {
+						&:first-of-type {
+							margin-inline-end: 0;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 991px) {
 	header {
-		padding: 0 1rem;
-
 		.navbar {
 			padding: 10px 0;
 
@@ -67,24 +100,6 @@
 		}
 	}
 
-	section.tours-in-page {
-		.content {
-			.tours-filter {
-				padding: 30px 15px;
-
-				.datepicker {
-					display: block;
-
-					.form-group {
-						&:first-of-type {
-							margin-inline-end: 0;
-						}
-					}
-				}
-			}
-		}
-	}
-
 	section.single-tour {
 		.content {
 			.single-tour-box {
@@ -93,11 +108,26 @@
 
 					.text {
 						margin-inline-end: 0;
+						padding: 20px;
 					}
 
 					.image {
 						width: 100%;
 					}
+				}
+			}
+		}
+	}
+
+	section.tours-in-page {
+		.content {
+			.tours-type {
+				margin-bottom: 30px;
+			}
+			.tours-sort {
+				.tours-result {
+					margin-bottom: 25px;
+					height: auto;
 				}
 			}
 		}
@@ -116,7 +146,7 @@
 
 @media screen and (max-width: 767px) {
 	.side-widget {
-		width: 80vw;
+		width: 85vw;
 	}
 
 	.main-slider {
@@ -216,17 +246,6 @@
 		}
 	}
 
-	section.tours-in-page {
-		.content {
-			.tours-sort {
-				.tours-result {
-					margin-bottom: 25px;
-					height: auto;
-				}
-			}
-		}
-	}
-
 	.contact-form-area {
 		.contact-form {
 			grid-column: 1/11;
@@ -317,12 +336,12 @@
 		.content {
 			.tours-sort {
 				.tours-result {
-					padding: 20px;
+					padding: 15px;
 				}
 
 				.tours-dropdowns {
 					display: block;
-					padding: 20px;
+					padding: 15px;
 
 					span {
 						margin-inline-end: 0;
@@ -369,7 +388,7 @@
 	section.single-tour {
 		.content {
 			.single-tour-booking {
-				padding: 25px;
+				padding: 20px;
 			}
 		}
 	}
@@ -384,6 +403,17 @@
 }
 
 @media screen and (max-width: 450px) {
+	.side-widget {
+		padding: 15px;
+
+		.account {
+			button {
+				padding: 7px 20px;
+				font-size: 14px;
+			}
+		}
+	}
+
 	.contact-info-area {
 		.content {
 			height: auto;

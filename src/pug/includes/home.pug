@@ -56,7 +56,7 @@ section(class="tours" style=`background-image: url(${img_path}/bgs/tours-bg.jpg)
 									- var list = ["78", "65", "251"]
 									each item in list
 										li 
-											a(href="!#") 
+											a(href="#!") 
 												i(class="fa-solid fa-eye")
 												span= item
 							div(class="tours-details")
@@ -135,26 +135,7 @@ section(class="hotels" style=`background-image: url(${img_path}/bgs/hotels-bg.jp
 //awesome hotels
 
 //testimonials
-section(class="testimonials" style=`background-image: url(${img_path}/bgs/testimonials-bg.jpg)`)
-	div(class="container")
-		div(class="content")
-			div(class="row")
-				div(class="col-lg-5 col-md-5")
-					div(class="testimonials-text")
-						div(class="main-title")
-							h2 #{testimonials.main_title}
-							p #{testimonials.description}
-						a(href="tour-result.html" class="btn") #{trans.read_more}
-				div(class="col-lg-7 col-md-7")
-					div(class="testimonials-carousel owl-carousel owl-theme")
-						- for (let box = 0; box < 3; box++)
-							div(class="testimonials-box")
-								div(class="image" style=`background-image: url(${img_path}/bgs/testimonials-bg.jpg)`)
-									img(data-src=`${img_path}/testimonials/0${box + 1}.jpg` class="img-fluid" alt="image")
-								div(class="details")
-									div(class="name") #{testimonials.opinions.name}
-									div(class="country") #{testimonials.opinions.countery}
-									p #{testimonials.opinions.description}
+include ../components/testimonials.pug
 //testimonials
 
 //contact us

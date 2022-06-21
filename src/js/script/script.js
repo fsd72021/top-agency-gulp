@@ -14,7 +14,7 @@ $(document).ready(function () {
 			$(this).removeClass("open");
 		}
 	});
-	$("section").on("click", function () {
+	$("section, .breadcrumb-area").on("click", function () {
 		if (sideWidget.hasClass("active")) {
 			sideWidget.removeClass("active");
 			dropdowntoggle.removeClass("open");

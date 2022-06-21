@@ -17,7 +17,7 @@ block home_block
 						+tours_result_box
 				div(class="row")
 					+tours_filtration_box
-					div(class="col-lg-8 col-md-6 box")
+					div(class="col-lg-8 col-md-12 box")
 						div(class="row")
 							- for (let box = 0; box < 3; box++)
 								div(class="col-lg-6 col-md-6 box" data-aos="fade-up" data-delay=box*50)
@@ -36,7 +36,7 @@ block home_block
 												- var list = ["78", "65", "251"]
 												each item in list
 													li 
-														a(href="!#") 
+														a(href="#!") 
 															i(class="fa-solid fa-eye")
 															span= item
 										div(class="tours-details")

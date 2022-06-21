@@ -22,48 +22,23 @@ block home_block
 							ul
 								each item in about_list
 									li #{item}
-							a(href="solutions.html" class="about-btn") #{about.about_more}
 					div(class="col-lg-5")
 						div(class="about-image" data-aos="fade-up" data-aos-delay="100")
 							img(data-src=`${img_path}/about.png` class="img-fluid" alt="image")
 	//about us
 
 	//testimonials
-	section(class="testimonials" style=`background-image: url(${img_path}/bgs/testimonials-bg.jpg)`)
-		div(class="container")
-			div(class="content")
-				div(class="row")
-					div(class="col-lg-5 col-md-5")
-						div(class="testimonials-text")
-							div(class="main-title")
-								h2 #{testimonials.main_title}
-								p #{testimonials.description}
-							a(href="tour-result.html" class="btn") #{trans.read_more}
-					div(class="col-lg-7 col-md-7")
-						div(class="testimonials-carousel owl-carousel owl-theme")
-							- for (let box = 0; box < 3; box++)
-								div(class="testimonials-box")
-									div(class="image" style=`background-image: url(${img_path}/bgs/testimonials-bg.jpg)`)
-										img(src=`${img_path}/testimonials/0${box + 1}.jpg` class="img-fluid" alt="image")
-									div(class="details")
-										div(class="name") #{testimonials.opinions.name}
-										div(class="country") #{testimonials.opinions.countery}
-										p #{testimonials.opinions.description}
+	include ../components/testimonials.pug
 	//testimonials
 
 	//partners
-	section(class="partners")
-		div(class="container")
-			div(class="content")
-				- for (let item = 0; item < 9; item++)
-					div(class="item")
-						img(data-src=`${img_path}/partners/0${item + 1}.png` class="img-fluid" alt="image")
+	include ../components/partners.pug
 	//partners
 
 	//call to action
-	include components/cta.pug
+	include ../components/cta.pug
 	//call to action
 
 	//contact us
-	include components/contact.pug
+	include ../components/contact.pug
 	//contact us

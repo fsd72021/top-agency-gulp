@@ -55,14 +55,14 @@ section.error {
 			color: #E4E3E5;
 			font-weight: 600;
 		}
-		
+
 		h3 {
 			font-size: 42px;
 			color: $main_color;
 			font-weight: 600;
 			margin-bottom: 15px;
 		}
-		
+
 		.lead {
 			text-transform: capitalize;
 			font-size: 16px;
@@ -157,7 +157,7 @@ section.tours-in-page {
 
 		.tours-filter {
 			background-color: $main_color;
-			padding: 35px;
+			padding: 25px;
 			height: 100%;
 
 			.title {
@@ -398,6 +398,8 @@ section.tours-in-page {
 }
 
 .datepicker {
+	direction: inherit;
+
 	table {
 		width: 100%;
 		border-collapse: separate;
@@ -725,29 +727,29 @@ section.single-tour {
 
 					position: relative;
 
-				&::before {
-					content: '';
-					position: absolute;
-					top: 50%;
-					left: -40px;
-					height: 2px;
-					width: 100%;
-					background: #d7d7d7;
-					z-index: -1;
-				}
+					&::before {
+						content: '';
+						position: absolute;
+						top: 50%;
+						left: -40px;
+						height: 2px;
+						width: 100%;
+						background: #d7d7d7;
+						z-index: -1;
+					}
 
-				&::after {
-					content: '';
-					position: absolute;
-					top: calc(50% - (15px / 2));
-					left: -46px;
-					height: 15px;
-					width: 15px;
-					background: #fff;
-					outline: 3px solid #fff;
-					border: 3px solid #d7d7d7;
-					border-radius: 50%;
-				}
+					&::after {
+						content: '';
+						position: absolute;
+						top: calc(50% - (15px / 2));
+						left: -46px;
+						height: 15px;
+						width: 15px;
+						background: #fff;
+						outline: 3px solid #fff;
+						border: 3px solid #d7d7d7;
+						border-radius: 50%;
+					}
 
 					h3 {
 						font-size: 22px;
